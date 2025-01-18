@@ -180,7 +180,9 @@ def run_canvas():
         user_steps = 1
     repeats = user_steps + 1
     selected_z_i = [st.session_state.uploaded_label for _ in range(repeats)]
+    #print(selected_z_i)
     len_z = len(st.session_state.selected_z.keys())
+    #print(len_z)
     k = {i: [selected_z_i[i-(len_z+1)], st.session_state.chosen_set, True if st.session_state.train_uploaded else False] for i in range(len_z+1, len_z+1+len(selected_z_i))}
     st.session_state.selected_z.update(k)
     response = run_agent(user_steps, input, LABEL=label)
@@ -572,9 +574,9 @@ with state_col:
         st.image(z_img)
         st.write("  " + str(z_arr))
 
-        print(sel_state)
-
-        print(len(st.session_state.selected_z.keys()))
+#        print(sel_state)
+#
+#        print(len(st.session_state.selected_z.keys()))
 
 
 
