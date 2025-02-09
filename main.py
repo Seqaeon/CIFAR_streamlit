@@ -169,7 +169,7 @@ def run_trials(is_training, num_trials, user_STEPS):
     progress_bar.empty()
 
 
-def run_canvas():
+def run_uploaded_image():
     input = data.bitmap_to_binary(st.session_state.uploaded_image).reshape(32*32*3*8)
     label = []
     user_steps = 10
@@ -498,7 +498,7 @@ with agent_col:
         else:
             Image_button_text = "Test on Uploaded image"
 
-        st.button(Image_button_text, on_click=run_canvas)
+        st.button(Image_button_text, on_click=run_uploaded_image)
 
         if "image_int" in st.session_state:
             st.write("Image identified as:")
