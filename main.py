@@ -18,7 +18,7 @@ def streamlit_setup():
 
 
 def setup_agent():
-    agent = ao.Agent(arch, notes="Default Agent", save_meta=False)
+    agent = ao.Agent(arch, save_meta=False, uid = "cifar",notes = "Default Agent")
     return agent
 
 
@@ -255,7 +255,7 @@ def arr_to_img(img_array, enlarge_factor=15):
 streamlit_analytics2.start_tracking()
 # Basic streamlit setup
 st.set_page_config(
-    page_title="MNIST Demo by AO Labs",
+    page_title="CIFAR Demo by AO Labs",
     page_icon="misc/ao_favicon.png",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -405,7 +405,7 @@ with agent_col:
             1,
             train_max,
             value=2,
-            help="Randomly  selected from MNIST's 60k training set.",
+            help="Randomly  selected from CIFAR's training set.",
         )
         
         st.button(
@@ -425,7 +425,7 @@ with agent_col:
                 1,
                 test_max,
                 value=1,
-                help="Randomly selected from MNIST's 10k test set.",
+                help="Randomly selected from CIFAR's 10k test set.",
             )
         with t_steps:
             user_STEPS = st.number_input(

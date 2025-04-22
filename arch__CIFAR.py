@@ -1,4 +1,8 @@
-import ao_arch as ar
+#import ao_arch as ar
+#import ao_python as ao
+from config import api_key
+
+import ao_core as ao
 
 
 #description = "CIFAR-10"
@@ -34,6 +38,6 @@ arch_c = []
 connector_function = "rand_conn"
 # used 360, 180 before to good success
 connector_parameters = [392, 261, 784, 7]
-arch = ar.Arch(
-    arch_i, arch_z, arch_c, connector_function, connector_parameters, description
+arch = ao.Arch(
+    arch_i, arch_z, arch_c, connector_function, connector_parameters, description,api_key = api_key, kennel_id = "cifar"
 )
